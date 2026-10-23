@@ -1,0 +1,67 @@
+@import "colors.rasi"
+
+* {
+    font: "JetBrainsMono Nerd Font Bold 12";
+    background-color: transparent;
+    text-color: @fg;
+}
+
+window {
+    location: center;
+    anchor: center;
+    width: 520px;
+    background-color: @bg;
+    border: 2px;
+    border-color: @dim;
+    border-radius: 28px;
+}
+
+mainbox {
+    padding: 18px;
+    spacing: 12px;
+    children: [inputbar, message, listview];
+}
+
+inputbar {
+    padding: 4px 6px;
+    spacing: 10px;
+    children: [prompt, entry];
+}
+prompt {
+    text-color: @fg;
+    font: "JetBrainsMono Nerd Font Bold 15";
+}
+entry {
+    placeholder: "Search...";
+    placeholder-color: @dim;
+}
+
+message {
+    padding: 10px 14px;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 8%);
+}
+textbox { text-color: @fg; }
+
+listview {
+    lines: 5;
+    scrollbar: false;
+    spacing: 8px;
+}
+
+element {
+    padding: 12px 16px;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 6%);
+    border: 1px;
+    border-color: rgba(255, 255, 255, 10%);
+}
+element selected.normal {
+    background-color: @sel-bg;
+    border-color: @sel-bg;
+    text-color: @sel-fg;
+}
+element-text {
+    text-color: inherit;
+    markup: true;
+}

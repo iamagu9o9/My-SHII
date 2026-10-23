@@ -1,0 +1,54 @@
+@import "colors.rasi"
+
+configuration {
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}
+
+* {
+    font: "JetBrainsMono Nerd Font 30";
+    background-color: transparent;
+    text-color: @dim;
+}
+
+window {
+    location: center;
+    anchor: center;
+    width: 540px;
+    background-color: @bg;
+    border: 2px;
+    border-color: @dim;
+    border-radius: 44px;
+}
+
+mainbox {
+    padding: 22px 26px;
+    children: [listview];
+}
+
+listview {
+    columns: 5;
+    lines: 1;
+    fixed-columns: true;
+    spacing: 8px;
+    scrollbar: false;
+    background-color: transparent;
+}
+
+element {
+    padding: 14px 0px;
+    border-radius: 30px;
+    background-color: transparent;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    text-color: inherit;
+}
+
+element selected.normal {
+    background-color: transparent;
+    text-color: @sel-bg;
+}

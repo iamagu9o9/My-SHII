@@ -1,0 +1,17 @@
+# Ignore sensitive data, tokens, and keys
+*.key
+*.pem
+*.env
+*.json
+*.log
+
+# Ignore cache, logs, and temporary files
+.cache/
+__pycache__/
+*.tmp
+
+# Ignore media/large binary builds
+*.mp4
+*.mkv
+*.tar.gz
+*.iso

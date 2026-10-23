@@ -1,0 +1,1 @@
+/home/iamagu/.local/state/qstheme/colors-hypr.lua

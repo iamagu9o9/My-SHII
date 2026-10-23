@@ -1,0 +1,102 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 38,
+    "margin-top": 6,
+    "margin-left": 12,
+    "margin-right": 12,
+
+    "modules-left": [
+        "custom/launcher",
+        "clock",
+        "custom/updates"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "mpris",
+        "pulseaudio",
+        "network",
+        "battery",
+        "custom/notification"
+    ],
+
+    // --- Module Configurations ---
+
+    "custom/launcher": {
+        "format": "\uf30a",
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "󰥔 {:%I:%M %p}",
+        "format-alt": "󰃭 {:%A, %B %d, %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+
+    "custom/updates": {
+        "format": "󰏔 {}",
+        "exec": "$HOME/.config/waybar/scripts/updates.sh",
+        "interval": 3600,
+        "tooltip": false,
+        "on-click": "kitty -e sudo dnf upgrade"
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+    "mpris": {
+        "format": "{player_icon} {artist} - {title}",
+        "format-paused": "{status_icon} {artist} - {title}",
+        "player-icons": {
+            "default": "󰎈"
+        },
+        "status-icons": {
+            "paused": "󰏤"
+        },
+        "max-length": 30
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Muted",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+
+    "network": {
+        "format-wifi": "󰤨 {essid}",
+        "format-ethernet": "󰈀 Ethernet",
+        "format-disconnected": "󰤭 Disconnected",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "on-click": "$HOME/.config/waybar/scripts/network.sh",
+        "on-click-right": "$HOME/.config/waybar/scripts/bluetooth.sh"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "󰂚",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    }
+}
