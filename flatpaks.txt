@@ -1,0 +1,5 @@
+app.zen_browser.zen
+com.discordapp.Discord
+dev.vencord.Vesktop
+org.videolan.VLC
+org.vinegarhq.Sober
